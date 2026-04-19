@@ -1,0 +1,146 @@
+/*
+ * Copyright (C) 2025 POGYCLIENTS
+ * Licensed under the POGYCLIENT License v2.0
+ * Unauthorized use, distribution, or modification is strictly prohibited.
+ * Legal actions, including DMCA takedowns and financial penalties, may apply.
+ */
+
+const env = process.env;
+
+module.exports = {
+  Shards: {
+    totalShards: env.TOTAL_SHARDS || "auto",
+    shardsPerCluster: Number(env.SHARDS_PER_CLUSTER || 4),
+    totalClusters: env.TOTAL_CLUSTERS || "auto",
+  },
+  Client: {
+    Token: env.DISCORD_TOKEN || "",
+    Prefix: env.BOT_PREFIX || "?",
+    VanityGuardToken: env.VANITY_GUARD_TOKEN || "",
+    botId: env.DISCORD_CLIENT_ID || "",
+    botSecret: env.DISCORD_CLIENT_SECRET || "",
+    TopGG: env.TOP_GG_TOKEN || "",
+    DefaultPermissions: ["SendMessages", "EmbedLinks", "ReadMessageHistory"],
+    DefaultUsersPermissions: ["SendMessages"],
+    Owners: (env.BOT_OWNERS || "1434858158618054756,1252101579855630346")
+      .split(",")
+      .map((value) => value.trim())
+      .filter(Boolean),
+    VanityGuard: env.VANITY_GUARD_URL || "",
+    QuiteJsk: [""],
+    OpenAIApi: env.OPENAI_API_KEY || "",
+    LogsChannel: env.LOGS_CHANNEL_ID || "",
+    Emojis: {
+      Flags: {
+        BugHunter1: "<:bug1:1490691026552098917>",
+        BugHunter2: "<:bug2:1490691005068869662>",
+        CertifiedModerator: "<:mod1:1490690982558302329>",
+        Exployee: "<:employee:1490690961397776435>",
+        EarlySupporter: "<:supporter:1490690941227503696>",
+        EarlyVerifiedBotDeveloper: "<:botdev:1490690918229999818>",
+        HyperSquadBalance: "<:hypersquadbalance:1490690897426518148>",
+        HyperSquadBravery: "<:hypersquadbravery:1490690836952912022>",
+        HyperSquadBrilliance: "<:hyperaquadbrilliance:1490690873971703888>",
+        HyperSquadEvent: "🏁",
+        PartnerServerOwner: "<:partner:1490690818611347586>",
+        VerifiedBot: "<:tick:1490691064640704734>",
+        SupportCommands: "<:check:1490691045598691399>",
+      },
+    },
+
+    PrimaryColor: "#2b2d31",
+    ErrorColor: "#ff0000",
+    SuccessColor: "#00ff4cff",
+    emoji: {
+      verify: "<:tick:1490691064640704734>",
+      automod: "<:bot:1490690797815730296>",
+      antinuke: "<:antinuke:1490690699840979056>",
+      POGYCLIENTemo: "✨",
+      invite: "<:invite:1490690771412844580>",
+      support: "<:support:1490690671571374170>",
+      welcome: "<:welcome:1490690651359023105>",
+      moderation: "<:moderation:1490690628781084803>",
+      utility: "<:utility:1490690607092600903>",
+      fun: "<:fun:1490690587895271534>",
+      image: "🖼️",
+      giveaway: "<:giveaway:1490690566814568720>",
+      tick: "<:tick:1490691064640704734>",
+      cross: "<:cross:1490690547843858494>",
+      gear: "<:utility:1490690607092600903>",
+      seen: "<:seen:1490690528789004500>",
+      down: "⬇️",
+      online: "<:online:1490690505472737371>",
+      idle: "<:idle:1490690453899841607>",
+      dnd: "<:offline:1490690486418014390>",
+      member: "<:member:1490690436472242347>",
+      gift: "<:giveaway:1490690566814568720>",
+      giveaway2: "<:giveaway:1490690566814568720>",
+      loading: "<:loading:1490690418520756386>",
+      developerEmoji: "<:botdev:1490690918229999818>",
+      communitymanager: "<:manager:1490690372433612850>",
+      ownerEmoji: "<:owner:1490690395682766899>",
+      adminEmoji: "<:admin:1490690350166184007>",
+      managerEmoji: "<:managerEmoji:1490690295292236026>",
+      moderatorEmoji: "<:moderation:1490690628781084803>",
+      staffEmoji: "<:support:1490690671571374170>",
+      supporterEmoji: "<:supporter:1490690941227503696>",
+      bughunterEmoji: "<:bug1:1490691026552098917>",
+      specialonesEmoji: "<:star:1490690180120711290>",
+      add: "<:plus:1490690262748369087>",
+      info: "<:info:1490690242603253861>",
+      channel: "📺",
+      Exclamation: "<:exlamention:1490690222650818610>",
+      emptybar: "░",
+      barleft: "█",
+      barmid: "█",
+      barright: "█",
+      emptybarend: "░",
+      arrow: "<:arrow_right:1490690197682126948>",
+      dot: "•",
+      join: "<:welcome:1490690651359023105>",
+      leave: "<:welcome:1490690651359023105>",
+      fake: "🚫",
+      memberadd: "<:member:1490690436472242347>",
+      star: "<:star:1490690180120711290>",
+      guide: "<:guide:1490690161007136919>",
+    },
+    serverId: env.HOME_SERVER_ID || "",
+    roleIds: {
+      ownerRoleId: env.OWNER_ROLE_ID || "",
+      communityManagerRoleId: env.COMMUNITY_MANAGER_ROLE_ID || "",
+      adminRoleId: env.ADMIN_ROLE_ID || "",
+      developerRoleId: env.DEVELOPER_ROLE_ID || "",
+      managerRoleId: env.MANAGER_ROLE_ID || "",
+      moderatorRoleId: env.MODERATOR_ROLE_ID || "",
+      staffRoleId: env.STAFF_ROLE_ID || "",
+      supporterRoleId: env.SUPPORTER_ROLE_ID || "",
+      bughunterRoleId: env.BUGHUNTER_ROLE_ID || "",
+      specialonesRoleId: env.SPECIAL_ONES_ROLE_ID || "",
+    },
+  },
+  Database: {
+    Uri: env.MONGODB_URI || "",
+  },
+  Lavalink: {
+    DefaultSearchEngine: env.LAVALINK_SEARCH_ENGINE || "youtube",
+    Resume: env.LAVALINK_RESUME ? env.LAVALINK_RESUME === "true" : true,
+    ResumeTimeout: Number(env.LAVALINK_RESUME_TIMEOUT || 60),
+    Nodes: [
+      {
+        name: env.LAVALINK_NODE_NAME || "main",
+        url: env.LAVALINK_NODE_URL || "",
+        auth: env.LAVALINK_NODE_AUTH || "",
+        secure: env.LAVALINK_NODE_SECURE ? env.LAVALINK_NODE_SECURE === "true" : true,
+      },
+    ],
+  },
+  Webhook: {
+    Url: env.WEBHOOK_URL || "",
+  },
+  Url: {
+    InviteURL: env.INVITE_URL || "",
+    SupportURL: env.SUPPORT_URL || "https://discord.gg/codexdev",
+    GuideURL: env.GUIDE_URL || "https://codexdevs.in",
+  },
+};
+
