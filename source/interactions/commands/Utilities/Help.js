@@ -378,7 +378,7 @@ module.exports = class HelpCommand extends Command {
     container.addTextDisplayComponents(
       new TextDisplayBuilder().setContent(
         [
-          `# ${emoji.POGYCLIENTemo} PogyClient Help`,
+          `# ${emoji.POGYCLIENTemo} Leviathan Help`,
           `A cleaner command hub for browsing the bot without drowning in clutter.`,
         ].join("\n")
       )
